@@ -279,16 +279,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const portfolioGrid = document.querySelector('.portfolio-grid');
     
     const additionalImages = [
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.51 AM (1).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (1).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (2).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (3).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM.jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.53 AM (1).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.53 AM.jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.54 AM.jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.55 AM (1).jpeg',
-        'Files and Text/Portfolio/WhatsApp Image 2026-04-09 at 11.18.55 AM.jpeg'
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.51 AM (1).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (1).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (2).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM (3).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.52 AM.jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.53 AM (1).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.53 AM.jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.54 AM.jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.55 AM (1).jpeg',
+        'assets/Portfolio/WhatsApp Image 2026-04-09 at 11.18.55 AM.jpeg'
     ];
 
     let imagesLoaded = false;
@@ -398,3 +398,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
