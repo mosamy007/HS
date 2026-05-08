@@ -213,6 +213,10 @@ body[dir="rtl"] .language-switcher {
     z-index: 2;
 }
 
+body[dir="rtl"] .hero-controls {
+    flex-direction: row-reverse;
+}
+
 .hero-controls {
     position: absolute;
     top: 50%;
