@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const newLang = currentLang === 'en' ? 'ar' : 'en';
         setLanguage(newLang);
+
+        if (window.innerWidth <= 768) {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+        }
     });
 
     const slides = document.querySelectorAll('.slide');
@@ -201,10 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const parallaxHero = function() {
+        if (window.innerWidth <= 768) return;
         const hero = document.querySelector('.hero');
         const scrolled = window.pageYOffset;
         const rate = scrolled * 0.5;
-        
+
         if (hero) {
             hero.style.transform = `translateY(${rate}px)`;
         }
@@ -388,13 +398,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('keydown', function(e) {
         if (!lightbox.classList.contains('active')) return;
-        
+
         if (e.key === 'Escape') {
             closeLightbox();
         } else if (e.key === 'ArrowLeft') {
             showPrevImage();
         } else if (e.key === 'ArrowRight') {
             showNextImage();
+        }
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                showNextImage();
+            } else {
+                showPrevImage();
+            }
+        }
+    }, { passive: true });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+            const hero = document.querySelector('.hero');
+            if (hero) hero.style.transform = '';
         }
     });
 });

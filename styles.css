@@ -80,6 +80,12 @@ body[dir="rtl"] .nav-menu {
     flex-direction: row-reverse;
 }
 
+@media (max-width: 768px) {
+    body[dir="rtl"] .nav-menu {
+        flex-direction: column;
+    }
+}
+
 .nav-menu a {
     text-decoration: none;
     color: var(--dark-color);
@@ -866,11 +872,12 @@ body[dir="rtl"] .contact-ltr {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .services-grid {
@@ -878,12 +885,54 @@ body[dir="rtl"] .contact-ltr {
     }
 
     .btn {
-        padding: 0.8rem 2rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
     }
 
     .language-switcher {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .hero {
+        padding: 100px 15px 40px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .services, .portfolio, .clients, .about, .contact {
+        padding: 50px 15px;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .client-logo {
+        padding: 2rem 1rem;
+        min-height: 120px;
+    }
+
+    .portfolio-grid {
+        gap: 1rem;
+    }
+
+    .contact-details {
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .logo-img {
+        height: 40px;
     }
 }
 
@@ -909,7 +958,6 @@ body[dir="rtl"] .contact-ltr {
 }
 
 .lightbox-content {
-    position: relative;
     max-width: 90vw;
     max-height: 90vh;
     display: flex;
@@ -919,7 +967,7 @@ body[dir="rtl"] .contact-ltr {
 }
 
 .lightbox-content img {
-    max-width: 100%;
+    max-width: 90vw;
     max-height: 90vh;
     width: auto;
     height: auto;
@@ -929,29 +977,33 @@ body[dir="rtl"] .contact-ltr {
 }
 
 .lightbox-close {
-    position: absolute;
-    top: -50px;
-    right: 0;
-    background: transparent;
-    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     color: var(--white);
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 10001;
+    backdrop-filter: blur(10px);
 }
 
 .lightbox-close:hover {
     transform: rotate(90deg);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .lightbox-prev,
 .lightbox-next {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2);
@@ -966,6 +1018,7 @@ body[dir="rtl"] .contact-ltr {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(10px);
+    z-index: 10001;
 }
 
 .lightbox-prev {
@@ -1017,8 +1070,11 @@ body[dir="rtl"] .contact-ltr {
     }
 
     .lightbox-close {
-        top: -40px;
-        font-size: 2rem;
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
     }
 
     .lightbox-prev,
@@ -1028,10 +1084,10 @@ body[dir="rtl"] .contact-ltr {
     }
 
     .lightbox-prev {
-        left: 5px;
+        left: 8px;
     }
 
     .lightbox-next {
-        right: 5px;
+        right: 8px;
     }
 }
