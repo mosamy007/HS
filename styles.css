@@ -646,7 +646,7 @@ body[dir="rtl"] .feature {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 body[dir="rtl"] .contact-item {
