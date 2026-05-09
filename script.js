@@ -69,15 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.querySelector('.hero-prev');
-    const nextBtn = document.querySelector('.hero-next');
     let currentSlide = 0;
     let slideInterval;
 
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
-        
+
         slides[index].classList.add('active');
         indicators[index].classList.add('active');
     }
@@ -87,42 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
     }
 
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
     function startSlideshow() {
         slideInterval = setInterval(nextSlide, 5000);
     }
-
-    function stopSlideshow() {
-        clearInterval(slideInterval);
-    }
-
-    prevBtn.addEventListener('click', function() {
-        prevSlide();
-        stopSlideshow();
-        startSlideshow();
-    });
-
-    nextBtn.addEventListener('click', function() {
-        nextSlide();
-        stopSlideshow();
-        startSlideshow();
-    });
 
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', function() {
             currentSlide = index;
             showSlide(currentSlide);
-            stopSlideshow();
-            startSlideshow();
         });
     });
-
-    document.querySelector('.hero').addEventListener('mouseenter', stopSlideshow);
-    document.querySelector('.hero').addEventListener('mouseleave', startSlideshow);
 
     startSlideshow();
 
